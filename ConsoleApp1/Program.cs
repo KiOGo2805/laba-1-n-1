@@ -12,7 +12,7 @@ class Program
 
         double a = 5;
         double b = 3;
-        double R = 3.5;
+        double R = 4;
 
         bool insideCircle = (x * x + y * y < R * R);
         bool onCircle = (x * x + y * y == R * R);
