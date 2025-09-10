@@ -14,12 +14,16 @@ class Program
         double b = 3;
         double R = 4;
 
-        bool insideCircle = (x * x + y * y < R * R);
         bool onCircle = (x * x + y * y == R * R);
+        bool insideCircle = (x * x + y * y < R * R);
+        if (onCircle)
+        {
+            bool insideRectangle = (x < 0 && y < 0 && y > (-b));
+            тута дальше вивід
+            return;
+        }
 
-
-        bool insideRectangleUp = (x >= -a && x <= a && y >= -b && y <= b);
-        bool insideRectangleDown = (x >= -a && x <= a && y >= -b && y <= b);
+        bool onRectangle = (x == a && y <= b && y >= 0) || (y == b && x <= a) || (y == 0 && x <= a);
 
 
         if (insideRectangle && insideCircle)
