@@ -68,7 +68,6 @@ class Program
                 Console.WriteLine("Ні");
                 return;
             }
-
         }
     }
 }
