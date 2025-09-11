@@ -48,7 +48,7 @@ class Program
         }
         else
         {
-            bool inRectangle = (x > 0 && x < a && y > 0 && y < b);
+            bool inRectangle = (x > 0 && x <= a && y >= 0 && y <= b);
             if (inRectangle)
             {
                 bool onRectangle = (x == a || y == b || y == 0);
