@@ -18,8 +18,8 @@ class Program
         bool insideCircle = (x * x + y * y < R * R);
         if (onCircle)
         {
-            bool insideRectangle = (x < 0 && y < 0 && y > (-b));
-            тута дальше вивід
+            bool insideRectangle = (x < 0 && y < 0 && y > (-b)) || (x > 0 && y > 0 && y < (-b));
+            
             return;
         }
 
