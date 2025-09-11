@@ -15,28 +15,36 @@ class Program
         double R = 4;
 
         bool onCircle = (x * x + y * y == R * R);
-        bool insideCircle = (x * x + y * y < R * R);
         if (onCircle)
         {
-            bool insideRectangle = (x < 0 && y < 0 && y > (-b)) || (x > 0 && y > 0 && y < (-b));
-            
+            bool inRectangle = (x < 0 && y < 0 && y > (-b)) || (x > 0 && y > 0 && y < (-b));
+            Console.WriteLine("На межі");
             return;
         }
 
-        bool onRectangle = (x == a && y <= b && y >= 0) || (y == b && x <= a) || (y == 0 && x <= a);
+        bool inCircle = (x * x + y * y < R * R);
+        if (inCircle)
+        {
+            bool inRectangle = (x >= (-a) && y >= (-b) && y <= 0);
+            if (inRectangle)
+            {
+                bool onRectangle = (x == (-a) || y == (-b) || y == 0);
+                if (onRectangle)
+                {
+                    Console.WriteLine("На межі");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("Так");
+                    return;
+                }
 
-
-        if (insideRectangle && insideCircle)
-        {
-            Console.WriteLine("Так");
-        }
-        else if (insideRectangle && !insideCircle)
-        {
-            Console.WriteLine("Ні");
-        }
-        else
-        {
-            Console.WriteLine("На межі");
+            }
+            else
+            {
+                Console.WriteLine("Ні");
+            }
         }
     }
 }
